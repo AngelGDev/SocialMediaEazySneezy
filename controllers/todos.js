@@ -52,7 +52,7 @@ module.exports = {
         }
     },
     
-    // Would likely need, depending on if we allow users to be able to delete their posts or not.
+    // Would need, since there's also a delete button in the application.
     deleteTodo: async (req, res)=>{
         console.log(req.body.todoIdFromJSFile)
         try{
