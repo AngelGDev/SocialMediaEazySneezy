@@ -1,3 +1,5 @@
+# We will make branches with the name of the each different Task to keep track of what we are changing on each branch
+
 # Team Eazy Sneezy Social Media App
 
 Social media platform that allows users to share pictures and follow each other. Instagram clone.
