@@ -3,6 +3,7 @@ const passport = require('passport')
 const config = require('../config/config')
 const router = express.Router()
 
+// Will be using azure again or do we need to change the authentication code?? 
 
 router.get('/login',
   function(req, res, next) {
