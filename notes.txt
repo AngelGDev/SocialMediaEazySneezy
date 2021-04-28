@@ -1,0 +1,4 @@
+rewatch class
+pause and codealong
+retry
+do it form scratch
