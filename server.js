@@ -8,7 +8,7 @@ const connectDB = require("./config/database");
 const authRoutes = require("./routes/auth");
 const homeRoutes = require("./routes/home");
 // rename to '.routes/entries'
-const todoRoutes = require("./routes/todos");
+const entryRoutes = require("./routes/entries");
 
 require("dotenv").config({ path: "./config/.env" });
 
@@ -39,7 +39,7 @@ app.use(passport.session());
 app.use("/", homeRoutes);
 app.use("/auth", authRoutes);
 // rename to '/entries', entryRoutes
-app.use("/todos", todoRoutes);
+app.use("/entries", entryRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log("Server is running, you better catch it!");

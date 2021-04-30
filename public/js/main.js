@@ -8,7 +8,7 @@
 *
 * Environment: node.js
 *
-* Purpose: update 'likes', show posts, show user home feed, display option to make a 'post', 
+* Purpose: update 'likes', show entries, show user home feed, display option to make a 'entry', 
 *          display option to 'show messages', display option to 'show and add comments' 
 *
 * Input: user click events, text input on comments
@@ -18,13 +18,13 @@
 * Output: like counter update, new comments, show newest home feed on every click of Home button, 
 *         show messages on message buton click, show the newest data on a 'page refresh'
 *
-* Postconditions: deleted posts will no longer appear on a page 'refresh', user can only view their own messges
+* Postconditions: deleted entries will no longer appear on a page 'refresh', user can only view their own messges
 *
 * Algorithm:
 *	1 Create variable to store user click input per button class
 *	2 Create an event listener per button class
 *	3 Call method to carry out a specific task per button class
-*	4 Output on screen data (i.e. total likes on a post, remove deleted posts)
+*	4 Output on screen data (i.e. total likes on an entry, remove deleted entries)
 *
 *	 
 *
@@ -38,21 +38,21 @@
 
 // Go to Home feed ".home" 
 
-// Show New posts "span.newPost"
+// Show New entries "span.newEntry"
 
-// Remove Deleted posts "span.deletedPost"
+// Remove Deleted entries "span.deletedEntry"
 
-// Show likes on a Post ".likes"
+// Show likes on an Entry ".likes"
 
 // add event listerner for homeBtn
 
-// add event listener for 'deletedPost'
+// add event listener for 'deletedEntry'
 
 // add event listener for 'likesBtn'
 
 // add event listener for 'addCommentBtn'
 
-// add event listener for 'postPicBtn'
+// add event listener for 'uploadPicBtn'
 
 // add event listener for 'goHomeBtn'
 
