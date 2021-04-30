@@ -6,14 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/css/style.css">
-    <title>Document</title>
-    <!--to be labaled name of website-->
-    <link rel="stylesheet" href="css/style.css">
+    <title>Eazy Sneezy Social App</title>
 </head>
 
 <body>
-
-    <!--Eazy Sneezy h1-->
     <section>
         <header>
             <nav>
@@ -41,10 +37,11 @@
         </header>
     </section>
 
-    <h3>Member Feed</h3>
-    <!--All memeber feed-->
+    <h3>User Feed</h3>
+    <!--Logged in user's feed-->
+
     <ul>
-        <!-- <% todos.forEach( el => { %> *** Code for looping through all members posts and displaying them ***
+        <!-- <% todos.forEach( el => { %> *** Code for looping through all user's posts and displaying them ***
        <% if(el.microsoftId === user.microsoftId){  %> 
             <li class='todoItem' data-id='<%=el._id%>'>
                 *** Add span where users can "like" a post.  Keeps count of likes to a particular post. ***
@@ -54,17 +51,6 @@
         <% }  %> 
     <% }) %>     -->
     </ul>
-
-    <!--Followed feed-->
-    <!-- *** Same as forEach above, but this is for members a user specifically follows *** -->
-
-    <!--A form to upload an image to the database-->
-    <form action="/todos/createTodo" method='POST'>
-        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
-        <input type="submit">
-    </form>
-
-    <script src="js/main.js"></script>
 </body>
 
 </html>

@@ -1,69 +1,61 @@
-const deleteBtn = document.querySelectorAll('.del')
-const todoItem = document.querySelectorAll('span.not')
-const todoComplete = document.querySelectorAll('span.completed')
+/******************************************************
+*
+* Programmer: Joel Godinez 
+* 
+* Date: April 28, 2021
+*
+* Files included: /public/js/main.js
+*
+* Environment: node.js
+*
+* Purpose: update 'likes', show posts, show user home feed, display option to make a 'post', 
+*          display option to 'show messages', display option to 'show and add comments' 
+*
+* Input: user click events, text input on comments
+*
+* Preconditions/ Assumptions: data displayed on screen is the most up to date
+*
+* Output: like counter update, new comments, show newest home feed on every click of Home button, 
+*         show messages on message buton click, show the newest data on a 'page refresh'
+*
+* Postconditions: deleted posts will no longer appear on a page 'refresh', user can only view their own messges
+*
+* Algorithm:
+*	1 Create variable to store user click input per button class
+*	2 Create an event listener per button class
+*	3 Call method to carry out a specific task per button class
+*	4 Output on screen data (i.e. total likes on a post, remove deleted posts)
+*
+*	 
+*
+*    Estimates                  Actuals
+*     Design: 1 hour            x hours
+*     Implementation: 4 hours   x hours
+*     Testing:        2 hours   x hours
+*
+*
+**************************************************************************/
 
-Array.from(deleteBtn).forEach((el)=>{
-    el.addEventListener('click', deleteTodo)
-})
+// Go to Home feed ".home" 
 
-Array.from(todoItem).forEach((el)=>{
-    el.addEventListener('click', markComplete)
-})
+// Show New posts "span.newPost"
 
-Array.from(todoComplete).forEach((el)=>{
-    el.addEventListener('click', markIncomplete)
-})
+// Remove Deleted posts "span.deletedPost"
 
-async function deleteTodo(){
-    const todoId = this.parentNode.dataset.id
-    try{
-        const response = await fetch('todos/deleteTodo', {
-            method: 'delete',
-            headers: {'Content-type': 'application/json'},
-            body: JSON.stringify({
-                'todoIdFromJSFile': todoId
-            })
-        })
-        const data = await response.json()
-        console.log(data)
-        location.reload()
-    }catch(err){
-        console.log(err)
-    }
-}
+// Show likes on a Post ".likes"
 
-async function markComplete(){
-    const todoId = this.parentNode.dataset.id
-    try{
-        const response = await fetch('todos/markComplete', {
-            method: 'put',
-            headers: {'Content-type': 'application/json'},
-            body: JSON.stringify({
-                'todoIdFromJSFile': todoId
-            })
-        })
-        const data = await response.json()
-        console.log(data)
-        location.reload()
-    }catch(err){
-        console.log(err)
-    }
-}
+// add event listerner for homeBtn
 
-async function markIncomplete(){
-    const todoId = this.parentNode.dataset.id
-    try{
-        const response = await fetch('todos/markIncomplete', {
-            method: 'put',
-            headers: {'Content-type': 'application/json'},
-            body: JSON.stringify({
-                'todoIdFromJSFile': todoId
-            })
-        })
-        const data = await response.json()
-        console.log(data)
-        location.reload()
-    }catch(err){
-        console.log(err)
-    }
-}
+// add event listener for 'deletedPost'
+
+// add event listener for 'likesBtn'
+
+// add event listener for 'addCommentBtn'
+
+// add event listener for 'postPicBtn'
+
+// add event listener for 'goHomeBtn'
+
+// add event listener for 'viewMessagesBtn'
+
+// add event listener for 'seeProfileBtn'

@@ -1,6 +1,10 @@
 const Todo = require('../models/Todo')
 
+// Likely going to need to delete, as we need to make new controllers for
+// the posting screen and also the feed screen.
 module.exports = {
+
+    // we would need a get for getting the posts from other users.
     getTodos: async (req,res)=>{
         console.log(req.user)
         try{
@@ -13,6 +17,7 @@ module.exports = {
             console.log(err)
         }
     },
+    // need a create for making posts to the feed. 
     createTodo: async (req, res)=>{
         try{
             await Todo.create({todo: req.body.todoItem, completed: false, microsoftId: req.user.microsoftId})
@@ -22,6 +27,7 @@ module.exports = {
             console.log(err)
         }
     },
+    // Not likely needed, as we don't need to mark items as complete.
     markComplete: async (req, res)=>{
         try{
             await Todo.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
@@ -33,6 +39,7 @@ module.exports = {
             console.log(err)
         }
     },
+    // Not likely needed, as we don't need to mark items as complete.
     markIncomplete: async (req, res)=>{
         try{
             await Todo.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
@@ -44,6 +51,8 @@ module.exports = {
             console.log(err)
         }
     },
+    
+    // Would need, since there's also a delete button in the application.
     deleteTodo: async (req, res)=>{
         console.log(req.body.todoIdFromJSFile)
         try{
