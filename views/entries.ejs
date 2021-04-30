@@ -22,7 +22,7 @@
                     <div>
                         <ul>
                             <li>
-                                <span>Logput</span>
+                                <span>Logout</span>
                             </li>
                             <li>
                                 <span>Profile</span>
@@ -44,9 +44,9 @@
     <h3>Member Feed</h3>
     <!--All memeber feed-->
     <ul>
-        <!-- <% todos.forEach( el => { %> *** Code for looping through all members posts and displaying them ***
-       <% if(el.microsoftId === user.microsoftId){  %> 
-            <li class='todoItem' data-id='<%=el._id%>'>
+        <!-- <% entries.forEach( el => { %> *** Code for looping through all members posts and displaying them ***
+       <% if(el.userId === user.userId){  %> 
+            <li class='entryItem' data-id='<%=el._id%>'>
                 *** Add span where users can "like" a post.  Keeps count of likes to a particular post. ***
                 <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
                 <span class='del'> Delete </span>
@@ -59,8 +59,8 @@
     <!-- *** Same as forEach above, but this is for members a user specifically follows *** -->
 
     <!--A form to upload an image to the database-->
-    <form action="/todos/createTodo" method='POST'>
-        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
+    <form action="/entries/createEntry" method='POST'>
+        <input type="text" placeholder="Enter Entry" name='entryItem'>
         <input type="submit">
     </form>
 
