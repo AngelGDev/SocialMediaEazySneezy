@@ -23,28 +23,37 @@ const UserSchema = new mongoose.Schema({
 
 // UserScheme Middleware to HASH PASSWORDS
 // https://www.twitch.tv/videos/1000589317?t=02h50m22s
-// copied from https://www.twitch.tv/videos/1000589317?t=02h51m41s
+// copied from https://github.com/sahat/hackathon-starter/blob/master/models/User.js
 //----------------------------------------------------------------
-UserSchema.pre('save', function save(next)) {
-  const user = this
-  if (!user.isModified('password')) { return next()}
+userSchema.pre("save", function save(next) {
+  const user = this;
+  if (!user.isModified("password")) {
+    return next();
+  }
   bcrypt.genSalt(10, (err, salt) => {
-    if (err) { return next(err) }
+    if (err) {
+      return next(err);
+    }
     bcrypt.hash(user.password, salt, (err, hash) => {
-      if(err) { return next(err)}
-      user.password = hash
-      next()
-    })
-  })
-}
+      if (err) {
+        return next(err);
+      }
+      user.password = hash;
+      next();
+    });
+  });
+});
 
 // Helper Method to Compare Passwords
 // copied from https://www.twitch.tv/videos/1000589317?t=02h51m44s
 //----------------------------------------------------------------
-UserSchema.methods.comparePassword = function comparePassword(candidatePassword, cb) {
+UserSchema.methods.comparePassword = function comparePassword(
+  candidatePassword,
+  cb
+) {
   bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
-    cb(err, isMatch)
-  })
-}
+    cb(err, isMatch);
+  });
+};
 
 module.exports = mongoose.model("User", UserSchema);
