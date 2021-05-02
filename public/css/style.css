@@ -179,7 +179,6 @@ input{
 }
 
 .signin-container > a{
-    text-decoration: none;
     color: rgb(181, 181, 181);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -197,6 +196,7 @@ input{
     Geneva,
     Verdana,
     sans-serif;
+    text-decoration: none;
     padding: 4px;
     width: 80px;
     font-size: 1rem;
